@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sam-3d-body"
+version = "0.1.0"
+description = "SAM 3D Body: Robust Full-Body Human Mesh Recovery"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Facebook Research"}
+]
+dependencies = [
+    "pytorch-lightning",
+    "pyrender",
+    "opencv-python",
+    "yacs",
+    "scikit-image",
+    "einops",
+    "timm",
+    "dill",
+    "pandas",
+    "rich",
+    "hydra-core",
+    "hydra-submitit-launcher",
+    "hydra-colorlog",
+    "pyrootutils",
+    "webdataset",
+    "chump",
+    "networkx==3.2.1",
+    "roma",
+    "joblib",
+    "seaborn",
+    "wandb",
+    "appdirs",
+    "appnope",
+    "ffmpeg",
+    "cython",
+    "jsonlines",
+    "pytest",
+    "xtcocotools",
+    "loguru",
+    "optree",
+    "fvcore",
+    "black",
+    "pycocotools",
+    # Detectron2 is required but often best installed manually or via direct reference
+    "detectron2 @ git+https://github.com/facebookresearch/detectron2.git@a1ce2f9"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/facebookresearch/sam-3d-body"
+"Repository" = "https://github.com/facebookresearch/sam-3d-body"
+
+[tool.setuptools.packages.find]
+include = ["sam_3d_body*", "tools*"]
