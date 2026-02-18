@@ -47,7 +47,7 @@ dependencies = [
     "black",
     "pycocotools",
     # Detectron2 is required but often best installed manually or via direct reference
-    "detectron2 @ git+https://github.com/facebookresearch/detectron2.git@a1ce2f9"
+    "detectron2", # @ git+https://github.com/facebookresearch/detectron2.git@a1ce2f9"
 ]
 
 [project.urls]
