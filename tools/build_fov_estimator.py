@@ -8,7 +8,7 @@ class FOVEstimator:
         self.device = device
 
         if name == "moge2":
-            print("########### Using fov estimator: MoGe2...")
+            #print("########### Using fov estimator: MoGe2...")
             self.fov_estimator = load_moge(device, **kwargs)
             self.fov_estimator_func = run_moge
 

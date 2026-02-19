@@ -10,11 +10,11 @@ class HumanSegmentor:
         self.device = device
 
         if name == "sam2":
-            print("########### Using human segmentor: SAM2...")
+            #print("########### Using human segmentor: SAM2...")
             self.sam = load_sam2(device, **kwargs)
             self.sam_func = run_sam2
         elif name == "sam3":
-            print("########### Using human segmentor: SAM3...")
+            #print("########### Using human segmentor: SAM3...")
             self.sam = load_sam3(device, **kwargs)
             self.sam_func = run_sam3
         else:
