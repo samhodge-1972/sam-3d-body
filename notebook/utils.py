@@ -44,7 +44,7 @@ def setup_sam_3d_body(
     Returns:
         estimator: SAM3DBodyEstimator instance ready for inference
     """
-    print(f"Loading SAM 3D Body model from {hf_repo_id}...")
+    #print(f"Loading SAM 3D Body model from {hf_repo_id}...")
 
     # Auto-detect device if not specified
     if device is None:
@@ -57,13 +57,13 @@ def setup_sam_3d_body(
     human_detector, human_segmentor, fov_estimator = None, None, None
 
     if detector_name:
-        print(f"Loading human detector from {detector_name}...")
+        #print(f"Loading human detector from {detector_name}...")
         from tools.build_detector import HumanDetector
 
         human_detector = HumanDetector(name=detector_name, device=device)
 
     if segmentor_path:
-        print(f"Loading human segmentor from {segmentor_path}...")
+        #print(f"Loading human segmentor from {segmentor_path}...")
         from tools.build_sam import HumanSegmentor
 
         human_segmentor = HumanSegmentor(
@@ -71,7 +71,7 @@ def setup_sam_3d_body(
         )
 
     if fov_name:
-        print(f"Loading FOV estimator from {fov_name}...")
+        #print(f"Loading FOV estimator from {fov_name}...")
         from tools.build_fov_estimator import FOVEstimator
 
         fov_estimator = FOVEstimator(name=fov_name, device=device)
@@ -85,14 +85,14 @@ def setup_sam_3d_body(
         fov_estimator=fov_estimator,
     )
 
-    print(f"Setup complete!")
-    print(
-        f"  Human detector: {'✓' if human_detector else '✗ (will use full image or manual bbox)'}"
-    )
-    print(
-        f"  Human segmentor: {'✓' if human_segmentor else '✗ (mask inference disabled)'}"
-    )
-    print(f"  FOV estimator: {'✓' if fov_estimator else '✗ (will use default FOV)'}")
+    #print(f"Setup complete!")
+    #print(
+    #    f"  Human detector: {'✓' if human_detector else '✗ (will use full image or manual bbox)'}"
+    #)
+    #print(
+    #    f"  Human segmentor: {'✓' if human_segmentor else '✗ (mask inference disabled)'}"
+    #)
+    #print(f"  FOV estimator: {'✓' if fov_estimator else '✗ (will use default FOV)'}")
 
     return estimator
 
@@ -225,7 +225,7 @@ def save_mesh_results(
         focal_length_path = os.path.join(save_dir, f"{image_name}_focal_length.json")
         with open(focal_length_path, "w") as f:
             json.dump(focal_length_data, f, indent=2)
-        print(f"Saved focal length: {focal_length_path}")
+        #print(f"Saved focal length: {focal_length_path}")
 
     for pid, person_output in enumerate(outputs):
         # Create renderer for this person
@@ -268,9 +268,9 @@ def save_mesh_results(
         bbox_filename = f"{image_name}_bbox_{pid:03d}.png"
         cv2.imwrite(os.path.join(save_dir, bbox_filename), img_bbox)
 
-        print(f"Saved mesh: {mesh_path}")
-        print(f"Saved overlay: {os.path.join(save_dir, overlay_filename)}")
-        print(f"Saved bbox: {os.path.join(save_dir, bbox_filename)}")
+        #print(f"Saved mesh: {mesh_path}")
+        #print(f"Saved overlay: {os.path.join(save_dir, overlay_filename)}")
+        #print(f"Saved bbox: {os.path.join(save_dir, bbox_filename)}")
 
     return ply_files
 

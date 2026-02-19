@@ -150,7 +150,7 @@ def undistort_image(image, intrinsics, distortion_coeffs):
 
 
 def extract_images(seq: str, input_dir: str, output_dir: str, scale: float):
-    print(f"Extract images for {seq}.")
+    #print(f"Extract images for {seq}.")
 
     src_dir = os.path.join(input_dir, seq)
     img_dir = os.path.join(src_dir, "exo")
